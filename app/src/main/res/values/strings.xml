@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MedicTime</string>
+    <string name="Title_un">Ajouter un médicament</string>
+    <string name="Label_Medoc">Médicament</string>
+    <string name="Add_Medoc">+</string>
+    <string name="Dates">Dates</string>
+    <string name="Prises">Prises</string>
+    <string name="MedocMatin">Matin</string>
+    <string name="MedocMidi">Midi</string>
+    <string name="MedocSoir">Soir</string>
+    <string name="Confirm_Add_Medoc_To_List">Valider</string>
+
+    <string name="Title_deux">Ajouter un médicament</string>
+    <string name="nom">Nom</string>
+    <string name="duree_par_defaut">Durée par défaut</string>
+    <string name="prises_par_defaut">Prises par défaut</string>
+    <string name="MatinDb">Matin</string>
+    <string name="MidiDb">Midi</string>
+    <string name="SoirDb">Soir</string>
+    <string name="Confirm_New_Medoc_To_Db">Valider</string>
+
+    <string name="ajouter">Ajouter</string>
+    <string name="medictime">MedicTime</string>
+    <string name="jour">Jour</string>
+    <string name="matin">Matin</string>
+    <string name="midi">Midi</string>
+    <string name="soir">Soir</string>
+</resources>
