@@ -11,7 +11,7 @@
     <string name="Confirm_Add_Medoc_To_List">Valider</string>
 
     <string name="Title_deux">Ajouter un médicament</string>
-    <string name="nom">Nom</string>
+    <string name="nom">Nom du médicament</string>
     <string name="duree_par_defaut">Durée par défaut</string>
     <string name="prises_par_defaut">Prises par défaut</string>
     <string name="MatinDb">Matin</string>

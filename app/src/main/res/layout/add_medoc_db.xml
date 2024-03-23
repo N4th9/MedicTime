@@ -3,14 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/lightblue">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed"
+        android:letterSpacing="0.10"
         android:text="@string/Title_deux"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#2196F3"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,6 +28,9 @@
         android:layout_marginStart="38dp"
         android:layout_marginTop="84dp"
         android:text="@string/nom"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +38,7 @@
         android:id="@+id/TextToDb"
         android:layout_width="266dp"
         android:layout_height="52dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="124dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,6 +49,9 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="244dp"
         android:text="@string/duree_par_defaut"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,36 +70,48 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="376dp"
         android:text="@string/prises_par_defaut"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/CheckBox_Matin_Db"
-        android:layout_width="173dp"
-        android:layout_height="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="436dp"
+        android:layout_marginTop="430dp"
         android:text="@string/MatinDb"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:buttonTint="#3F51B5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/CheckBox_Midi_Db"
-        android:layout_width="173dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="508dp"
+        android:layout_marginTop="500dp"
+        android:buttonTint="#3F51B5"
         android:text="@string/MidiDb"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/CheckBox_Soir_Db"
-        android:layout_width="171dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="568dp"
+        android:layout_marginTop="570dp"
+        android:buttonTint="#3F51B5"
         android:text="@string/SoirDb"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -93,10 +119,12 @@
         android:id="@+id/Confirm_New_Medoc_To_Db"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="268dp"
+        android:layout_marginStart="292dp"
         android:layout_marginTop="664dp"
+        android:background="@drawable/custom_button_background"
         android:text="@string/Confirm_New_Medoc_To_Db"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
