@@ -12,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -32,8 +31,7 @@ import year23.helha.project_medictime.models.PrisesMedocDb;
 
 public class MedocAddListView extends AppCompatActivity {
 
-    private MedocCursorWrapper mMedocCursorWrapper;
-    protected PrisesMedoc prisesMedoc;
+    private PrisesMedoc prisesMedoc;
 
     @SuppressLint("Range")
     @Override
@@ -45,37 +43,37 @@ public class MedocAddListView extends AppCompatActivity {
         Button mAddMedoc = this.findViewById(R.id.goToMedocDb);
         TextView mDateDebut = this.findViewById(R.id.Date_Debut);
         TextView mDateFin = this.findViewById(R.id.Date_Fin);
-        CheckBox mCBMatinList = this.findViewById(R.id.CheckBox_Matin_To_List);
+        CheckBox mCBMorningList = this.findViewById(R.id.CheckBox_Matin_To_List);
         CheckBox mCBMidiList = this.findViewById(R.id.CheckBox_Midi_To_List);
-        CheckBox mCBSoirList = this.findViewById(R.id.CheckBox_Soir_To_List);
-        Spinner spinnerMedocs = findViewById(R.id.Spinner_Medocs);
-        Button mGoToList = findViewById(R.id.Confirm_Add_Medoc_To_List);
+        CheckBox mCBEveningList = this.findViewById(R.id.CheckBox_Soir_To_List);
+        Spinner spinnerMedoc = this.findViewById(R.id.Spinner_Medocs);
+        Button mGoToList = this.findViewById(R.id.Confirm_Add_Medoc_To_List);
 
         SQLiteDatabase mDataBase = new MedocHelper(this).getWritableDatabase();
         String query = "SELECT * FROM " + MedocColDb.MedocTable.NAME;
         Cursor cursor = mDataBase.rawQuery(query, null);
-        mMedocCursorWrapper = new MedocCursorWrapper(cursor);
-        List<Medoc> medocs = new ArrayList<>();
+        MedocCursorWrapper mMedocCursorWrapper = new MedocCursorWrapper(cursor);
+        List<Medoc> medoc = new ArrayList<>();
         try {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
-                medocs.add(mMedocCursorWrapper.getMedoc());
+                medoc.add(mMedocCursorWrapper.getMedoc());
                 cursor.moveToNext();
             }
         } finally {
             cursor.close();
         }
-        ArrayAdapter<Medoc> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, medocs);
+        ArrayAdapter<Medoc> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, medoc);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerMedocs.setAdapter(adapter);
+        spinnerMedoc.setAdapter(adapter);
         cursor.getCount();
-        spinnerMedocs.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+        spinnerMedoc.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long Id) {
-                Medoc selectedMedoc = medocs.get(position);
-                mCBMatinList.setChecked(selectedMedoc.isMatin());
+                Medoc selectedMedoc = medoc.get(position);
+                mCBMorningList.setChecked(selectedMedoc.isMatin());
                 mCBMidiList.setChecked(selectedMedoc.isMidi());
-                mCBSoirList.setChecked(selectedMedoc.isSoir());
+                mCBEveningList.setChecked(selectedMedoc.isSoir());
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -104,11 +102,11 @@ public class MedocAddListView extends AppCompatActivity {
 
         ShowDateDebut(mDateDebut);
         ShowFinPickerDialog(mDateFin);
-        ShowMedocsOnListView(mCBMatinList, mCBMidiList, mCBSoirList);
+        ShowMedocOnListView(mCBMorningList, mCBMidiList, mCBEveningList);
     }
 
-    private void ShowMedocsOnListView(CheckBox mCBMatinList, CheckBox mCBMidiList, CheckBox mCBSoirList) {
-        mCBMatinList.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+    private void ShowMedocOnListView(CheckBox mCBMorningList, CheckBox mCBMidiList, CheckBox mCBEveningList) {
+        mCBMorningList.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             if (prisesMedoc != null) {
                 prisesMedoc.setMatin(isChecked);
             }
@@ -118,7 +116,7 @@ public class MedocAddListView extends AppCompatActivity {
                 prisesMedoc.setMidi(isChecked);
             }
         });
-        mCBSoirList.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+        mCBEveningList.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             if (prisesMedoc != null) {
                 prisesMedoc.setSoir(isChecked);
             }

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class PrisesMedoc {
-    private static int lastMedocId = 0;
+    private int lastMedocId = 0;
 
     public UUID getId() {
         return mId;

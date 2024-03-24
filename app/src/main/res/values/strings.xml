@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MedicTime</string>
-    <string name="Title_un">Ajouter un médicament</string>
+    <string name="Title_un">Ajouter à la liste</string>
     <string name="Label_Medoc">Médicament</string>
     <string name="Add_Medoc">+</string>
     <string name="Dates">Dates</string>
